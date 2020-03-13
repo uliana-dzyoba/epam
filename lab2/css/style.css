@@ -596,7 +596,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .videos__link {
-    margin-right: 12px;
+    margin-right: 10px;
   }
   .videos__link:nth-last-child(-n+2) {
     display: none;
