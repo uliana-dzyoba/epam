@@ -1,0 +1,21 @@
+.news {
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 4px;
+  }
+  &__preview {
+    width: 140px;
+  }
+  &__excerpt {
+    margin-left: 1px;
+    line-height: 18px;
+    letter-spacing: -0.29px;
+    margin-top: 1px;
+    font-family: $font-primary, sans-serif;
+    font-size: 14.2px;
+    color:$color-text-basic;
+    @include line-clamp(4);
+    overflow: hidden;
+  }
+}

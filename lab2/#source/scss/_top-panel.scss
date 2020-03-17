@@ -1,0 +1,43 @@
+.top-panel {
+  max-width:940px;
+  margin: auto;
+  display:flex;
+  justify-content: flex-end;
+  font-family: $font-primary, sans-serif;
+  font-size:12.2px;
+  &__link {
+    letter-spacing: 0.5px;
+    display:block;
+    height:100%;
+    color:$color-top-panel-text;
+  }
+  &__sign-up {
+    margin-left: 10px;
+    margin-right: 9.5px;
+    margin-top:5px;
+    margin-bottom:4px;
+  }
+  &__log-in {
+    margin-left: 9px;
+    margin-right: 10px;
+    margin-top:5px;
+    margin-bottom:4px;
+  }
+  &__mail {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top:5px;
+    margin-bottom:4px;
+    width:16px;
+    height:12px;
+    background-image: url("../img/mail.png");
+  }
+  &__settings {
+    margin-right: 1px;
+    margin-top:3px;
+    margin-bottom:4px;
+    width:16px;
+    height:16px;
+    background-image: url("../img/settings.png");
+  }
+}
