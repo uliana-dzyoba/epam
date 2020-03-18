@@ -40,4 +40,4 @@ if(secondChoice==null){
   }
 }
 
-alert("You will "+allOptions[type].words[0]+firstChoice+" and "+allOptions[type].words[1]+secondChoice+allOptions[type].words[2]);
+alert(`You will ${allOptions[type].words[0]}${firstChoice} and ${allOptions[type].words[1]}${secondChoice}${allOptions[type].words[2]}`);
