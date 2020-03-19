@@ -1,0 +1,30 @@
+.navbar {
+  display:flex;
+  padding-bottom: 5px;
+  justify-content: space-between;
+  @include bottom-border(2px);
+  &__links {
+    font-family: $font-primary, sans-serif;
+    font-size:17.5px;
+    display:flex;
+    margin-top:5px;
+    margin-left:8.5px;
+  }
+  &__item {
+    margin-right:18.4px;
+    &:first-child {
+      margin-right:24px;
+    }
+  }
+  &__link {      
+    color:$color-text-basic;
+  }
+  
+  &__button {
+    width:22px;
+    height:21px;
+    background-image: url("../img/menu.png");
+    margin-right: -3px;
+    margin-top:3px;
+  }
+}
