@@ -1,10 +1,8 @@
 function setUp(){
   const addButton=document.getElementById('add');
   addButton.addEventListener('click', addRow);
-  const deleteButtons=document.getElementsByClassName('delete');
-  for(let b of deleteButtons) {
-    b.addEventListener('click', deleteRow);
-  }
+  const table=document.getElementById('river-table');
+  table.addEventListener('click', deleteRow);
   for(let n of document.getElementsByClassName('riverName')) {
     n.addEventListener('input', changeDiagram);
   }
@@ -24,7 +22,6 @@ function addRow(){
   const newDeleteButton=document.createElement('button');
   newDeleteButton.classList.add('delete');
   newDeleteButton.textContent='Видалити';
-  newDeleteButton.addEventListener('click', deleteRow);
   deleteCell.appendChild(newDeleteButton);
   nameCell.classList.add('riverName');
   lengthCell.classList.add('riverLength');
@@ -49,12 +46,13 @@ function addRow(){
 }
 
 function deleteRow(event){
+  if(event.target.classList.contains('delete')){
   const index=event.target.parentNode.parentNode.rowIndex;
-  const table=document.getElementById('river-table');
-  table.deleteRow(index);
+  event.currentTarget.deleteRow(index);
   const deletedBlock=document.getElementsByClassName('block')[index-1];
   deletedBlock.remove();
   changeDiagram();
+  }
 }
 
 function drawDiagram(){
