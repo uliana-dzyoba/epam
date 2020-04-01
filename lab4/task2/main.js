@@ -38,7 +38,7 @@ function addRow(){
   const caption=document.createElement('div');
   caption.classList.add('names');
   bar.classList.add('bars');
-  bar.style['background-color']="#" + getColor();
+  bar.style.backgroundColor="#" + getColor();
   block.classList.add('block');
   block.appendChild(bar);
   block.appendChild(caption);
@@ -80,7 +80,7 @@ function drawDiagram(){
     caption.classList.add('names');
     bar.dataset.value=lengthes[i];
     bar.classList.add('bars');
-    bar.style['background-color']="#" + getColor();
+    bar.style.backgroundColor="#" + getColor();
     block.classList.add('block');
     bar.addEventListener('mousemove', showValue);
     block.appendChild(bar);

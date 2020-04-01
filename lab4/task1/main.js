@@ -5,8 +5,25 @@ function setUp(){
     inputs[i].addEventListener('input', validateInput);
 
   }
-  form.addEventListener('submit', function(){
-    let isValid=true;
+  form.addEventListener('submit', validateForm);
+  // form.addEventListener('submit', function(){
+  //   let isValid=true;
+  //   for(let i=0; i<inputs.length; i++){
+  //     if(inputs[i].value==""){
+  //       inputs[i].classList.add('error');
+  //     }
+  //     if(inputs[i].classList.contains('error')) {
+  //       isValid=false;
+  //     }
+  //   } 
+
+  //   if(isValid) changeImage(inputs);
+  // });
+}
+function validateForm(event){
+  event.preventDefault();
+  let isValid=true;
+  const inputs=event.target.getElementsByTagName('input');
     for(let i=0; i<inputs.length; i++){
       if(inputs[i].value==""){
         inputs[i].classList.add('error');
@@ -17,7 +34,6 @@ function setUp(){
     } 
 
     if(isValid) changeImage(inputs);
-  });
 }
 
 function validateInput(event){
