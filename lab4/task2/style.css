@@ -1,0 +1,46 @@
+.delete {
+  color:#2B60DE;
+  border:none;
+  padding:0;
+  background: none;
+}
+
+h2 {
+  margin-top:30px;
+  margin-bottom:20px;
+}
+
+.diagram {
+  display:flex;
+  justify-content: space-around;
+
+}
+
+.block {
+  margin-right:10px;
+  margin-left:10px;
+  flex-basis:20%;
+  height: 400px;
+  position:relative;
+}
+
+.names{
+  position: absolute;
+  bottom:0;
+  width:100%;
+  text-align:center;
+}
+
+.bars {
+  background-color: green;
+  position: absolute;
+  bottom:30px;
+  width:100%;
+}
+
+.value {
+  position:absolute;
+  visibility: hidden;
+  color: white;
+  z-index: 100;
+}

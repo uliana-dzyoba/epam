@@ -1,0 +1,15 @@
+.image {
+  width:1000px;
+  border-width:5px;
+  border-style: solid;
+  border-color: red;
+}
+
+.parameter {
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+.error {
+  border-color:red;
+}
