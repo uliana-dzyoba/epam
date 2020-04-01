@@ -21,7 +21,7 @@ function setUp(){
 }
 
 function validateInput(event){
-  const attribute=event.target.getAttribute('data-format');
+  const attribute=event.target.dataset.format;
   if((attribute=='number'&&isNaN(event.target.value))||(attribute=='string'&&!event.target.value.match(/[a-z]/i))){
     event.target.classList.add('error');
   } else if(event.target.value!=""){

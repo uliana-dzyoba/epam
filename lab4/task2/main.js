@@ -78,7 +78,7 @@ function drawDiagram(){
     const caption=document.createElement('div');
     caption.textContent=names[i];
     caption.classList.add('names');
-    bar.setAttribute('data-value', lengthes[i]);
+    bar.dataset.value=lengthes[i];
     bar.classList.add('bars');
     bar.style['background-color']="#" + getColor();
     block.classList.add('block');
@@ -128,14 +128,14 @@ function changeDiagram(){
   for(let i=0; i<names.length; i++){
     const bar=diagram.getElementsByClassName('bars')[i]
     bar.style.height=(lengthes[i]/max)*height+'px';
-    bar.setAttribute('data-value', lengthes[i]);
+    bar.dataset.value=lengthes[i];
     const caption=diagram.getElementsByClassName('names')[i]
     caption.textContent=names[i];
   }
 }
 
 function showValue(event){
-  const value=event.target.getAttribute('data-value');
+  const value=event.target.dataset.value;
   const x=event.clientX;
   const y=event.clientY;
   const over=document.getElementsByClassName('value')[0];
