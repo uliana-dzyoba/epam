@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="main.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+  <div class="container">
+  <h2>Довжини річок України</h2> 
+  <table id="river-table" class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th></th>
+        <th scope="col">Річка</th>
+        <th scope="col">Довжина (км)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><button class="delete">Видалити</button></td>
+        <td contenteditable="true" class="riverName">Дніпро</td>
+        <td contenteditable="true" class="riverLength">1121</td>
+      </tr>
+      <tr>
+        <td><button class="delete">Видалити</button></td>
+        <td contenteditable="true" class="riverName">Дністер</td>
+        <td contenteditable="true" class="riverLength">925</td>
+      </tr>
+      <tr>
+        <td><button class="delete">Видалити</button></td>
+        <td contenteditable="true" class="riverName">Південний Буг</td>
+        <td contenteditable="true" class="riverLength">806</td>
+      </tr>
+      <tr>
+        <td><button class="delete">Видалити</button></td>
+        <td contenteditable="true" class="riverName">Сіверський Донець</td>
+        <td contenteditable="true" class="riverLength">700</td>
+      </tr>
+    </tbody>
+  </table>
+  <button type="button" id="add" class="btn btn-outline-secondary">Додати річку</button>
+  <h2>Діаграма</h2>
+  <div id="diagram" class="diagram">
+  </div>
+</div>
+<script src="js/bootstrap.js"></script>  
+</body>
+</html>

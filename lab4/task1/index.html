@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="main.js"></script>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <form id="img-form" action="">
+  <fieldset>
+    <legend>Зміна властивостей зображення</legend>
+    <img src="https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2018/08/03/1117/Hyatt-Regency-Nice-Palais-de-la-Mediterranee-P435-The-Mediterranean-Sea.jpg/Hyatt-Regency-Nice-Palais-de-la-Mediterranee-P435-The-Mediterranean-Sea.16x9.jpg" id="image" class="image" alt="image">
+      <div class="parameter">
+      <label for="width">Ширина (width)</label>
+      <input name="width" data-format="number">
+      </div>
+      <div class="parameter">
+      <label for="height">Висота (height)</label>
+      <input name="height" data-format="number">
+      </div>
+      
+      <div class="parameter">
+      <label for="frame-width">Товщина рамки</label>
+      <input name="frame-width" data-format="number">
+      </div>
+      <div class="parameter">
+      <label for="frame-color">Колір рамки</label>
+      <input name="frame-color">
+      </div>
+
+      <div class="parameter">
+      <label for="text">Альтернативний текст</label>
+      <input name="text" data-format="string">
+      </div>
+      <button type="submit" value="Застосувати параметри">Застосувати параметри</button>
+    </fieldset>
+  </form>
+</body>
+</html>
