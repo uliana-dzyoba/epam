@@ -1,0 +1,15 @@
+.block {
+  margin-bottom: 30px;
+}
+
+label {
+  margin-right: 20px;
+}
+
+.error {
+  color:red;
+}
+
+div.error{
+  margin-left: 60px;
+}
