@@ -12,14 +12,15 @@ class MainPage(webapp.RequestHandler):
   def get(self):
     # Disable the reflected XSS filter for demonstration purposes
     self.response.headers.add_header("X-XSS-Protection", "0")
+    self.response.headers.add_header("Content-Security-Policy", "script-src 'self' https://xss-game.appspot.com/static/game-frame.js")
  
     # Route the request to the appropriate template
     if "signup" in self.request.path:
       self.response.out.write(render('signup.html', 
-        {'next': self.request.get('next')}))
+        {'next': self.request.get('next').replace('javascript', '')}))
     elif "confirm" in self.request.path:
       self.response.out.write(render('confirm.html', 
-        {'next': self.request.get('next', 'welcome')}))
+        {'next': self.request.get('next', 'welcome').replace('javascript', '')}))
     else:
       self.response.out.write(render('welcome.html', {}))
      

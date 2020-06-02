@@ -14,7 +14,7 @@
       function chooseTab(num) {
         // Dynamically load the appropriate image.
         var html = "Image " + parseInt(num) + "<br>";
-        html += "<img src='https://xss-game.appspot.com/static/level3/cloud" + num + ".jpg' />";
+        html += "<img src='https://xss-game.appspot.com/static/level3/cloud" + parseInt(num) + ".jpg' />";//only number is passed 
         $('#tabContent').html(html);
  
         window.location.hash = num;
@@ -34,13 +34,13 @@
       }
  
       window.onload = function() { 
-        chooseTab(unescape(self.location.hash.substr(1)) || "1");
+        chooseTab(parseInt(self.location.hash.substr(1)) || "1");//get only numbers
       }
  
       // Extra code so that we can communicate with the parent page
       window.addEventListener("message", function(event){
         if (event.source == parent) {
-          chooseTab(unescape(self.location.hash.substr(1)));
+          chooseTab(parseInt(self.location.hash.substr(1)));//get only numbers
         }
       }, false);
     </script>

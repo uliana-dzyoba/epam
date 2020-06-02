@@ -26,6 +26,9 @@ main_page_markup = """
 </form>
 """
 import webapp2 as webapp
+import cgi
+import cgitb
+cgitb.enable()
 class MainPage(webapp.RequestHandler):
  
   def render_string(self, s):
@@ -39,8 +42,8 @@ class MainPage(webapp.RequestHandler):
       # Show main search page
       self.render_string(page_header + main_page_markup + page_footer)
     else:
-      query = self.request.get('query', '[empty]')
-       
+      query = cgi.escape(self.request.get('query', '[empty]'), quote=True)
+      print(query)
       # Our search engine broke, we found no results :-(
       message = "Sorry, no results were found for <b>" + query + "</b>."
       message += " <a href='?'>Try again</a>."

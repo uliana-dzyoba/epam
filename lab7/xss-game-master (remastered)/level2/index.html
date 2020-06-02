@@ -4,10 +4,16 @@
     <!-- Internal game scripts/styles, mostly boring stuff -->
     <script src="https://xss-game.appspot.com/static/game-frame.js"></script>
     <link rel="stylesheet" href="https://xss-game.appspot.com/static/game-frame-styles.css" />
+
+    <!-- sanitizing html -->
+    <!-- <script src="https://cdn.jsdelivr.net/gh/jitbit/HtmlSanitizer@master/HtmlSanitizer.js"></script>  -->
  
     <!-- This is our database of messages -->
-    <script src="https://xss-game.appspot.com/static/post-store.js"></script>
-   
+    <!-- <script src="https://xss-game.appspot.com/static/post-store.js"></script> -->
+    
+    <!-- This is our database of messages -->
+    <script src="post-store.js"></script>
+
     <script>
       var defaultMessage = "Welcome!<br><br>This is your <i>personal</i>"
         + " stream. You can post anything you want here, especially "
@@ -40,7 +46,7 @@
         }
  
         document.getElementById('post-form').onsubmit = function() {
-          var message = document.getElementById('post-content').value;
+          var message = HtmlSanitizer.SanitizeHtml(document.getElementById('post-content').value);//sanitizing input
           DB.save(message, function() { displayPosts() } );
           document.getElementById('post-content').value = "";
           return false;

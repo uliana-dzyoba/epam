@@ -1,6 +1,7 @@
 import webapp2 as webapp
 import os
 import jinja2
+import re
 
 def render(tpl_path, context = {}):
     path, filename = os.path.split(tpl_path)
@@ -8,20 +9,21 @@ def render(tpl_path, context = {}):
         loader=jinja2.FileSystemLoader(path or './')
     ).get_template(filename).render(context)
 
-class MainPage(webapp.RequestHandler): 
+class MainPage(webapp.RequestHandler):
+ 
   def get(self):
     # Disable the reflected XSS filter for demonstration purposes
     self.response.headers.add_header("X-XSS-Protection", "0")
  
-    # Route the request to the appropriate template
-    if "signup" in self.request.path:
-      self.response.out.write(render('signup.html', 
-        {'next': self.request.get('next')}))
-    elif "confirm" in self.request.path:
-      self.response.out.write(render('confirm.html', 
-        {'next': self.request.get('next', 'welcome')}))
+    if not self.request.get('timer'):
+      # Show main timer page
+      self.response.out.write(render('index.html'))
     else:
-      self.response.out.write(render('welcome.html', {}))
+      # Show the results page
+      timer = self.request.get('timer', 0)
+      # get number from string
+      self.response.out.write(render('timer.html', {'timer': re.findall(r'\d+', timer)[0]}))
+      print(re.findall(r'\d+', timer)[0])
      
     return
  
